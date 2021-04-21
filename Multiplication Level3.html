@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:GreenYellow;">
+
+
+<h1 Id="Question1"></h1>
+<h2 Id="Checker">You got your last answer:</h2>
+<button onclick="var audio = new Audio('Mozart - Classical Music for Brain Power (128 kbps).mp3');
+audio.play();" class="button button2">Music</button>
+ <a href="Html4 Mental Math.html"><button class="button button3" onclick="file:///C:/Users/ethan/Downloads/Html4%20Mental%20Math.html">Back</button></a>
+
+<style>
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+        display: block;
+        background-color: #7b38d8;
+        border-radius: 10px;
+        border: 4px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+        cursor: pointer;
+       }
+
+h2 {verticle-align: top;
+    text-align:left;
+    font-family: Arial, sans-serif;
+    font-size: 30px;}
+
+h1 {text-align:center;
+    font-family: Arial, sans-serif;
+    font-size: 70px;
+}
+
+.button1 { margin: 5px;
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.button2 { margin: 5px;
+           position: absolute;
+           top: 10%;
+           left: 90%;
+        -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button3 { margin: 5px;
+           position: absolute;
+           top: 10%;
+           left: 10%;
+        -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+</style>
+
+<form action="" class="our-form">
+<input type="text" class="our-field" autocomplete="off" placeholder="Your Answer.." align="center">
+<button class="button button1">Submit</button>
+
+
+<script>
+
+const ourForm = document.querySelector(".our-form")
+
+//random number
+var x = Math.floor(Math.random() * 100);
+
+var y = Math.floor(Math.random() * 100);
+
+//answer checker
+
+const ourField = document.querySelector(".our-field")
+
+
+
+//displaying number
+
+
+setInterval(function(){document.getElementById("Question1").innerHTML = 
+x + " " + "x" + " " + y;  }, 1);
+
+
+ourForm.addEventListener("submit", handleSubmit)
+
+function handleSubmit(e) {
+ e.preventDefault()
+
+if (parseInt(ourField.value, 10) == x*y) {
+
+ document.getElementById("Checker").innerHTML = 
+"You got your last answer: Correct";
+
+x = Math.floor(Math.random() * 100);
+y = Math.floor(Math.random() * 100);
+
+ourField.value = ""
+
+var audio = new Audio('Ding Sound Effect.mp3');
+audio.play();
+
+
+} else {
+ 
+document.getElementById("Checker").innerHTML = 
+"You got your last answer: Incorrect";
+
+var audio1 = new Audio('False question incorrect answer sound effect.mp3');
+audio1.play();
+
+ourField.value = ""
+
+  }
+
+}
+
+
+
+</script>
+
+
+</form>
+</body>
+</html>
